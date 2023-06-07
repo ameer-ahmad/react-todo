@@ -15,6 +15,19 @@ const Form = () => {
         }
     }
 
+    const removeTodo = (id) => {
+        if (todos.length === 1) {
+            setTodos([])
+        } else {
+            setTodos(prevState => {
+                let temp = prevState.filter((todo, index) => {
+                    return index !== id
+                })
+                return temp
+            })
+        }
+    }
+
   return (
     <div className='container'>
         <form className='form-container'>
@@ -22,10 +35,11 @@ const Form = () => {
             <button className='add-todo' onClick={(e) => {
                 e.preventDefault()
                 addTodo(task)
+                setTask("")
                 }}>ADD</button>
         </form>
 
-        <Todos todos={todos} />
+        <Todos todos={todos} removeTodo={removeTodo} />
     </div>
   )
 }

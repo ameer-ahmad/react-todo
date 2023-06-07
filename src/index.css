@@ -39,3 +39,26 @@ body {
 .form-container .add-todo:hover {
   background-color: darkblue;
 }
+
+.todos-container {
+  margin-top: 25px;
+}
+
+.single-todo {
+  border: 1px solid black;
+  background-color: white;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+  font-size: 24px;
+}
+
+.single-todo .delete {
+  background-color: transparent;
+  border: none;
+  color: red;
+  font-size: 24px;
+  cursor: pointer;
+}
